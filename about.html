@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loading Example</title>
+<style>
+  /* Full screen loader */
+  #loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+
+  /* Circle spinner */
+  .spinner {
+    width: 60px;
+    height: 60px;
+    border: 6px solid #ddd;
+    border-top: 6px solid #3498db;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
+  }
+
+  /* Hide main content initially */
+  #content {
+    display: none;
+    padding: 50px;
+    text-align: center;
+    font-size: 24px;
+  }
+</style>
+</head>
+<body>
+
+<!-- Loader -->
+<div id="loader">
+  <div class="spinner"></div>
+</div>
+
+<!-- Main content -->
+<div id="content">
+  <h1>Welcome to JUBA EGGS!</h1>
+  <p>Here is your main website content.</p>
+</div>
+
+<script>
+  // Simulate loading for 3 seconds
+  setTimeout(() => {
+    document.getElementById('loader').style.display = 'none';
+    document.getElementById('content').style.display = 'block';
+  }, 3000); // 3000ms = 3 seconds
+</script>
+
+</body>
+</html>
