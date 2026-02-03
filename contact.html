@@ -37,6 +37,65 @@ JUBA EGGS :: CONTACT
     </div>
   </div>
                 </section>
+<form id="orderForm">
+  <label>Delivery Location</label>
+  <input type="text" id="location" placeholder="Street / Area / City" required>
+
+  <label>Quantity Needed</label>
+  <select id="quantity" required>
+    <option value="">Select quantity</option>
+    <option>1 Crate</option>
+    <option>2 Crates</option>
+    <option>5 Crates</option>
+    <option>10+ Crates</option>
+  </select>
+
+  <label>Size</label>
+  <select id="size" required>
+    <option value="">Select size</option>
+    <option>Small</option>
+    <option>Medium</option>
+    <option>Large</option>
+  </select>
+
+  <label>Delivery Date</label>
+  <input type="date" id="date" required>
+
+  <label>Delivery Time</label>
+  <input type="time" id="time" required>
+
+  <label>Additional Notes</label>
+  <textarea id="notes" placeholder="Any special requests..."></textarea>
+
+  <button type="submit">Send Order to WhatsApp</button>
+</form>
+
+<script>
+document.getElementById('orderForm').addEventListener('submit', function(e) {
+  e.preventDefault(); // Prevent page reload
+
+  // Get form values
+  const location = document.getElementById('location').value;
+  const quantity = document.getElementById('quantity').value;
+  const size = document.getElementById('size').value;
+  const date = document.getElementById('date').value;
+  const time = document.getElementById('time').value;
+  const notes = document.getElementById('notes').value || "None";
+
+  // Your WhatsApp number (replace with your number, no +)
+  const phone = "2347067934495";
+
+  // Build the message with double line breaks (\n\n)
+  const message = `New Order:\n\nLocation: ${location}\n\nQuantity: ${quantity}\n\nSize: ${size}\n\nDelivery Date: ${date}\n\nDelivery Time: ${time}\n\nNotes: ${notes}`;
+
+  // Encode message for URL
+  const encodedMessage = encodeURIComponent(message);
+
+  // Open WhatsApp
+  window.open(`https://wa.me/${phone}?text=${encodedMessage}`, '_blank');
+});
+</script>
+
 <script>
     setTimeout(() => {
     document.getElementById('loader').style.display = 'none';
