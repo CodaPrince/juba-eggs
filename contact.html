@@ -37,9 +37,11 @@ JUBA EGGS :: CONTACT
     </div>
   </div>
                 </section>
+                <section>
+                  <div class="form">
 <form id="orderForm">
   <label>Delivery Location</label>
-  <input type="text" id="location" placeholder="Street / Area / City" required>
+  <input type="text" id="location" placeholder="Street / Area / City" required><br><br>
 
   <label>Quantity Needed</label>
   <select id="quantity" required>
@@ -48,7 +50,7 @@ JUBA EGGS :: CONTACT
     <option>2 Crates</option>
     <option>5 Crates</option>
     <option>10+ Crates</option>
-  </select>
+  </select> <br><br>
 
   <label>Size</label>
   <select id="size" required>
@@ -56,20 +58,21 @@ JUBA EGGS :: CONTACT
     <option>Small</option>
     <option>Medium</option>
     <option>Large</option>
-  </select>
+  </select><br><br>
 
   <label>Delivery Date</label>
-  <input type="date" id="date" required>
+  <input type="date" id="date" required><br><br>
 
   <label>Delivery Time</label>
-  <input type="time" id="time" required>
+  <input type="time" id="time" required><br><br>
 
   <label>Additional Notes</label>
-  <textarea id="notes" placeholder="Any special requests..."></textarea>
+  <textarea id="notes" placeholder="Any special requests..."></textarea><br><br>
 
-  <button type="submit">Send Order to WhatsApp</button>
+  <button type="submit">Order Now</button>
 </form>
-
+</div>
+                </section>
 <script>
 document.getElementById('orderForm').addEventListener('submit', function(e) {
   e.preventDefault(); // Prevent page reload
