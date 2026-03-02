@@ -5,7 +5,27 @@ body {
   background-color: darkblue;
   color: #000;
 }
-
+.pt{
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.pt1{
+  display: flex;
+  flex:1;
+  background-color: #f7c948;
+}
+.pt2{
+  display: flex;
+  flex:1;
+  background-color: rosybrown;
+}
+.pt3{
+    display: flex;
+  flex:1;
+  background-color: #ccc;
+}
 a {
   text-decoration: none;
 }
@@ -112,6 +132,7 @@ a {
   justify-content: center;
   height: 60px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  animation:scroll-left 20s linear infinite;
 }
 
 .menu a {
@@ -123,6 +144,8 @@ a {
 
 .menu a:hover {
   color: #f7c948;
+  background-color: aqua;
+font-display: fallback;
 }
 
 /* ================= HERO ================= */
@@ -246,7 +269,7 @@ a {
 
 /* ================= MEDIA QUERIES ================= */
 @media(min-width:768px){
-  .menu-wrapper, .wrapper1, .wrapper2, .wrapper3{
+  .menu-wrapper, .wrapper1, .wrapper2, .wrapper3, .pt{
       flex-direction: row;
   }
 }
